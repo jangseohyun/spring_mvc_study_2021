@@ -1,14 +1,26 @@
-body, p, div, span, input, table, th, td, select
+/*==========================
+    #14-1. main.css
+    - 메인 스타일 구성
+==========================*/
+
+
+body, p, div, span, input, table, th, td, select, textarea
 {
-	font-size: 18px;
-	font-family: 맑은 고딕;
+	font-size: 14px;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #343;
 }
 
-.control
+a
 {
-	border: 1px solid gray;
-	border-radius: 3px;
+	text-decoration: none;
+	color: gray;
+}
+
+a:hover
+{
+	text-decoration: underline;
+	color: red; 
 }
 
 .table
@@ -17,28 +29,39 @@ body, p, div, span, input, table, th, td, select
 	width: 100%;
 }
 
-.table th, table td
+.table th, .table td
 {
 	border: 1px solid gray;
 	border-left: 0px;
 	border-right: 0px;
+	
 	padding: 3px;
 	line-height: 150%;
+	text-align: center;
 }
 
 .table th
 {
 	font-weight: bold;
-	background-color: #EEE;
+	background-color: #eee;
+}
+
+.table td
+{
+	font-size: 12pt;
 }
 
 .btn
 {
+	cursor: pointer;
+	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: bold;
 }
 
 .btn:hover
 {
+	cursor: pointer;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: bold;
 	color: orange;
-	background-color: #778877;
 }
