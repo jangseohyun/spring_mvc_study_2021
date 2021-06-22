@@ -35,7 +35,8 @@
 		<hr>
 		<div>
 			<form action="">
-				<input type="button" value="직원 추가" class="btn">
+				<input type="button" value="직원 추가" class="btn"
+				 onclick="location.href='employeeinsertform.action'">
 			</form>
 		</div>
 		
