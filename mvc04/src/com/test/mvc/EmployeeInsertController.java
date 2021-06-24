@@ -12,6 +12,7 @@ package com.test.mvc;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
@@ -34,9 +35,28 @@ public class EmployeeInsertController implements Controller      // get방식이
    {
       // 여기서 handleRequest는 우리 그 get, post 둘다 받는거 만들때에서 둘다 받는 기능 하는애라고 생각하면됨
       // 액션 코드 
-      
       ModelAndView mav = new ModelAndView();
       
+      // 세션 처리과정 추가 --------------------------------------------
+      
+      HttpSession session = request.getSession();
+      
+      if (session.getAttribute("name") == null)		//--로그인이 되어있지 않은 상황
+      {
+      	mav.setViewName("redirect:loginform.action");
+      	return mav;
+      }
+      else if (session.getAttribute("admin") == null)	//--관리자 아님. 일반사원으로 로그인된 상황
+      {
+      	// 관리자로 재로그인할 수 있도록 강제 로그아웃
+      	mav.setViewName("redirect:logout.action");
+      	return mav;
+      }
+      
+      // if문에 걸리지 않았을 경우 관리자로 로그인된 상황
+      
+      // ---------------------------------------------------------------
+		
       // 데이터 수신 후 employeelist.action 으로 확인할 수 있게 해주는 부분
       String name = request.getParameter("name");
       String ssn1 = request.getParameter("ssn1");

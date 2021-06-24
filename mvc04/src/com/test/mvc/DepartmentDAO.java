@@ -65,6 +65,34 @@ public class DepartmentDAO implements IDepartmentDAO
 		return result;
 	}
 
+	// 부서 검색
+	@Override
+	public Department searchId(String departmentId) throws SQLException
+	{
+		Department result = new Department();
+		
+		Connection conn = dataSource.getConnection();
+		
+		String sql = "SELECT DEPARTMENTID, DEPARTMENTNAME, DELCHECK FROM DEPARTMENTVIEW WHERE DEPARTMENTID = ?";
+		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, departmentId);
+		ResultSet rs = pstmt.executeQuery();
+		
+		while (rs.next())
+		{	
+			result.setDepartmentId(rs.getString("DEPARTMENTID"));
+			result.setDepartmentName(rs.getString("DEPARTMENTNAME"));
+			result.setDelCheck(rs.getInt("DELCHECK"));
+		}
+		
+		rs.close();
+		pstmt.close();
+		conn.close();
+		
+		return result;
+	}
+
 	// 부서 데이터 등록(입력, 추가)
 	@Override
 	public int add(Department department) throws SQLException
@@ -129,4 +157,30 @@ public class DepartmentDAO implements IDepartmentDAO
 		return result;
 	}
 
+	// 부서 데이터 중복 검사용 개수 세기
+	@Override
+	public int count(String departmentName) throws SQLException
+	{
+		int result = 0;
+		
+		Connection conn = dataSource.getConnection();
+		
+		String sql = "SELECT COUNT(*) AS COUNT FROM DEPARTMENT WHERE DEPARTMENTNAME = ?";
+		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, departmentName);
+		
+		ResultSet rs = pstmt.executeQuery();
+		
+		while (rs.next())
+		{
+			result = rs.getInt("COUNT");
+		}
+		
+		rs.close();
+		pstmt.close();
+		conn.close();
+		
+		return result;
+	}
 }

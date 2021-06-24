@@ -3,146 +3,146 @@ FROM DUAL;
 --==>> SCOTT
 
 
---¡Û ½Ç½À Å×ÀÌºí »ý¼º(Áö¿ª: REGION)
+--?—‹ ?‹¤?Šµ ?…Œ?´ë¸? ?ƒ?„±(ì§??—­: REGION)
 CREATE TABLE REGION
-( REGIONID      NUMBER          --Áö¿ª ¾ÆÀÌµð(PK)
-, REGIONNAME    VARCHAR2(30)    --Áö¿ª ¸í
+( REGIONID      NUMBER          --ì§??—­ ?•„?´?””(PK)
+, REGIONNAME    VARCHAR2(30)    --ì§??—­ ëª?
 , CONSTRAINT REGION_ID_PK PRIMARY KEY(REGIONID)
 );
---==>> Table REGIONÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> Table REGION?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û ½ÃÄö½º »ý¼º(Áö¿ª: REGIONSEQ)
+--?—‹ ?‹œ???Š¤ ?ƒ?„±(ì§??—­: REGIONSEQ)
 CREATE SEQUENCE REGIONSEQ
 NOCACHE;
---==>> Sequence REGIONSEQÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> Sequence REGIONSEQ?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û µ¥ÀÌÅÍ ÀÔ·Â(Áö¿ª µ¥ÀÌÅÍ ÀÔ·Â)
-INSERT INTO REGION(REGIONID, REGIONNAME) VALUES(REGIONSEQ.NEXTVAL, '¼­¿ï');
-INSERT INTO REGION(REGIONID, REGIONNAME) VALUES(REGIONSEQ.NEXTVAL, '°æ±â');
-INSERT INTO REGION(REGIONID, REGIONNAME) VALUES(REGIONSEQ.NEXTVAL, 'ÀÎÃµ');
---==>> 1 Çà ÀÌ(°¡) »ðÀÔµÇ¾ú½À´Ï´Ù. *3
+--?—‹ ?°?´?„° ?ž…? ¥(ì§??—­ ?°?´?„° ?ž…? ¥)
+INSERT INTO REGION(REGIONID, REGIONNAME) VALUES(REGIONSEQ.NEXTVAL, '?„œ?š¸');
+INSERT INTO REGION(REGIONID, REGIONNAME) VALUES(REGIONSEQ.NEXTVAL, 'ê²½ê¸°');
+INSERT INTO REGION(REGIONID, REGIONNAME) VALUES(REGIONSEQ.NEXTVAL, '?¸ì²?');
+--==>> 1 ?–‰ ?´(ê°?) ?‚½?ž…?˜?—ˆ?Šµ?‹ˆ?‹¤. *3
 
 
---¡Û µ¥ÀÌÅÍ ÀÔ·Â(Áö¿ª µ¥ÀÌÅÍ Ãß°¡ ÀÔ·Â)
-INSERT INTO REGION(REGIONID, REGIONNAME) VALUES(REGIONSEQ.NEXTVAL, 'Á¦ÁÖ');
---==>> 1 Çà ÀÌ(°¡) »ðÀÔµÇ¾ú½À´Ï´Ù.
+--?—‹ ?°?´?„° ?ž…? ¥(ì§??—­ ?°?´?„° ì¶”ê? ?ž…? ¥)
+INSERT INTO REGION(REGIONID, REGIONNAME) VALUES(REGIONSEQ.NEXTVAL, '? œì£?');
+--==>> 1 ?–‰ ?´(ê°?) ?‚½?ž…?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û È®ÀÎ
+--?—‹ ?™•?¸
 SELECT REGIONID, REGIONNAME FROM REGION
 ;
 /*
 REGIONID	REGIONNAME
-1	¼­¿ï
-2	°æ±â
-3	ÀÎÃµ
-4	Á¦ÁÖ
+1	?„œ?š¸
+2	ê²½ê¸°
+3	?¸ì²?
+4	? œì£?
 */
  
  
---¡Û Ä¿¹Ô
+--?—‹ ì»¤ë°‹
 COMMIT;
 
 
---¡Û ½Ç½À Å×ÀÌºí »ý¼º(Á÷À§: POSITION)
+--?—‹ ?‹¤?Šµ ?…Œ?´ë¸? ?ƒ?„±(ì§ìœ„: POSITION)
 CREATE TABLE POSITION
-( POSITIONID    NUMBER          --Á÷À§ ¾ÆÀÌµð(PK)
-, POSITIONNAME  VARCHAR2(30)    --Á÷À§ ¸í
-, MINBASICPAY   NUMBER          --ÃÖ¼Ò ±âº»±Þ
+( POSITIONID    NUMBER          --ì§ìœ„ ?•„?´?””(PK)
+, POSITIONNAME  VARCHAR2(30)    --ì§ìœ„ ëª?
+, MINBASICPAY   NUMBER          --ìµœì†Œ ê¸°ë³¸ê¸?
 , CONSTRAINT POSITION_ID_PK PRIMARY KEY(POSITIONID)
 );
---==>> Table POSITIONÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> Table POSITION?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û ½ÃÄö½º »ý¼º(Á÷À§: POSITIONSEQ)
+--?—‹ ?‹œ???Š¤ ?ƒ?„±(ì§ìœ„: POSITIONSEQ)
 CREATE SEQUENCE POSITIONSEQ
 NOCACHE;
---==>> Sequence POSITIONSEQÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> Sequence POSITIONSEQ?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û µ¥ÀÌÅÍ ÀÔ·Â(Á÷À§ µ¥ÀÌÅÍ ÀÔ·Â)
+--?—‹ ?°?´?„° ?ž…? ¥(ì§ìœ„ ?°?´?„° ?ž…? ¥)
 INSERT INTO POSITION(POSITIONID, POSITIONNAME, MINBASICPAY)
-VALUES(POSITIONSEQ.NEXTVAL, '»ç¿ø', 1000000); --¹é¸¸
+VALUES(POSITIONSEQ.NEXTVAL, '?‚¬?›', 1000000); --ë°±ë§Œ
 INSERT INTO POSITION(POSITIONID, POSITIONNAME, MINBASICPAY)
-VALUES(POSITIONSEQ.NEXTVAL, '´ë¸®', 2000000); --ÀÌ¹é¸¸
+VALUES(POSITIONSEQ.NEXTVAL, '??ë¦?', 2000000); --?´ë°±ë§Œ
 INSERT INTO POSITION(POSITIONID, POSITIONNAME, MINBASICPAY)
-VALUES(POSITIONSEQ.NEXTVAL, 'ºÎÀå', 3000000); --»ï¹é¸¸
+VALUES(POSITIONSEQ.NEXTVAL, 'ë¶??ž¥', 3000000); --?‚¼ë°±ë§Œ
 INSERT INTO POSITION(POSITIONID, POSITIONNAME, MINBASICPAY)
-VALUES(POSITIONSEQ.NEXTVAL, '»ó¹«', 4000000); --»ç¹é¸¸
---==>> 1 Çà ÀÌ(°¡) »ðÀÔµÇ¾ú½À´Ï´Ù. *4
+VALUES(POSITIONSEQ.NEXTVAL, '?ƒë¬?', 4000000); --?‚¬ë°±ë§Œ
+--==>> 1 ?–‰ ?´(ê°?) ?‚½?ž…?˜?—ˆ?Šµ?‹ˆ?‹¤. *4
 
 
---¡Û È®ÀÎ
+--?—‹ ?™•?¸
 SELECT POSITIONID, POSITIONNAME, MINBASICPAY FROM POSITION
 ;
 /*
 POSITIONID	POSITIONNAME	MINBASICPAY
-1	        »ç¿ø      	1000000
-2	        ´ë¸®	    2000000
-3	        ºÎÀå	        3000000
-4	        »ó¹«      	4000000
+1	        ?‚¬?›      	1000000
+2	        ??ë¦?	    2000000
+3	        ë¶??ž¥	        3000000
+4	        ?ƒë¬?      	4000000
 */
 
 
---¡Û Ä¿¹Ô
+--?—‹ ì»¤ë°‹
 COMMIT;
 
 
---¡Û ½Ç½À Å×ÀÌºí »ý¼º(ºÎ¼­: DEPARTMENT)
+--?—‹ ?‹¤?Šµ ?…Œ?´ë¸? ?ƒ?„±(ë¶??„œ: DEPARTMENT)
 CREATE TABLE DEPARTMENT
-( DEPARTMENTID      NUMBER          --ºÎ¼­ ¾ÆÀÌµð(PK)
-, DEPARTMENTNAME    VARCHAR2(30)    --ºÎ¼­ ¸í
+( DEPARTMENTID      NUMBER          --ë¶??„œ ?•„?´?””(PK)
+, DEPARTMENTNAME    VARCHAR2(30)    --ë¶??„œ ëª?
 , CONSTRAINT DEPARTMENT_ID_PK PRIMARY KEY(DEPARTMENTID)
 );
---==>> Table DEPARTMENTÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> Table DEPARTMENT?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û ½ÃÄö½º »ý¼º(ºÎ¼­: DEPARTMENTSEQ)
+--?—‹ ?‹œ???Š¤ ?ƒ?„±(ë¶??„œ: DEPARTMENTSEQ)
 CREATE SEQUENCE DEPARTMENTSEQ
 NOCACHE;
---==>> Sequence DEPARTMENTSEQÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> Sequence DEPARTMENTSEQ?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û µ¥ÀÌÅÍ ÀÔ·Â(ºÎ¼­ µ¥ÀÌÅÍ ÀÔ·Â)
-INSERT INTO DEPARTMENT(DEPARTMENTID, DEPARTMENTNAME) VALUES(DEPARTMENTSEQ.NEXTVAL, '°³¹ßºÎ');
-INSERT INTO DEPARTMENT(DEPARTMENTID, DEPARTMENTNAME) VALUES(DEPARTMENTSEQ.NEXTVAL, '¸¶ÄÉÆÃºÎ');
-INSERT INTO DEPARTMENT(DEPARTMENTID, DEPARTMENTNAME) VALUES(DEPARTMENTSEQ.NEXTVAL, '¿µ¾÷ºÎ');
---==>> 1 Çà ÀÌ(°¡) »ðÀÔµÇ¾ú½À´Ï´Ù. *3
+--?—‹ ?°?´?„° ?ž…? ¥(ë¶??„œ ?°?´?„° ?ž…? ¥)
+INSERT INTO DEPARTMENT(DEPARTMENTID, DEPARTMENTNAME) VALUES(DEPARTMENTSEQ.NEXTVAL, 'ê°œë°œë¶?');
+INSERT INTO DEPARTMENT(DEPARTMENTID, DEPARTMENTNAME) VALUES(DEPARTMENTSEQ.NEXTVAL, 'ë§ˆì??Œ…ë¶?');
+INSERT INTO DEPARTMENT(DEPARTMENTID, DEPARTMENTNAME) VALUES(DEPARTMENTSEQ.NEXTVAL, '?˜?—…ë¶?');
+--==>> 1 ?–‰ ?´(ê°?) ?‚½?ž…?˜?—ˆ?Šµ?‹ˆ?‹¤. *3
 
 
---¡Û È®ÀÎ
+--?—‹ ?™•?¸
 SELECT DEPARTMENTID, DEPARTMENTNAME FROM DEPARTMENT
 ;
 /*
 DEPARTMENTID	DEPARTMENTNAME
-1	        °³¹ßºÎ
-2	        ¸¶ÄÉÆÃºÎ
-3	        ¿µ¾÷ºÎ
+1	        ê°œë°œë¶?
+2	        ë§ˆì??Œ…ë¶?
+3	        ?˜?—…ë¶?
 */
 
 
---¡Û Ä¿¹Ô
+--?—‹ ì»¤ë°‹
 COMMIT;
---==>> Ä¿¹Ô ¿Ï·á.
+--==>> ì»¤ë°‹ ?™„ë£?.
 
 
---¡Û ½Ç½À Å×ÀÌºí »ý¼º(Á÷¿ø: EMPLOYEE)
--- »ç¿ø¹øÈ£, »ç¿ø¸í, ÁÖ¹Î¹øÈ£, »ý³â¿ùÀÏ, ¾çÀ½·Â
---, ÀüÈ­¹øÈ£, ºÎ¼­, Á÷À§, Áö¿ª, ±âº»±Þ, ¼ö´ç
+--?—‹ ?‹¤?Šµ ?…Œ?´ë¸? ?ƒ?„±(ì§ì›: EMPLOYEE)
+-- ?‚¬?›ë²ˆí˜¸, ?‚¬?›ëª?, ì£¼ë?¼ë²ˆ?˜¸, ?ƒ?…„?›”?¼, ?–‘?Œ? ¥
+--, ? „?™”ë²ˆí˜¸, ë¶??„œ, ì§ìœ„, ì§??—­, ê¸°ë³¸ê¸?, ?ˆ˜?‹¹
 CREATE TABLE EMPLOYEE
-( EMPLOYEEID    NUMBER                  --»ç¿ø¹øÈ£(PK)
-, NAME          VARCHAR2(30)            --»ç¿ø ¸í
-, SSN           VARCHAR2(20)            --ÁÖ¹Î ¹øÈ£(¾ÏÈ£È­ ±â´É Àû¿ë!)
-, BIRTHDAY      DATE                    --»ý³â¿ùÀÏ
-, LUNAR         NUMBER(1) DEFAULT 0     --¾çÀ½·Â(¾ç·Â 0, À½·Â 1)
-, TELEPHONE     VARCHAR2(40)            --ÀüÈ­ ¹øÈ£
-, DEPARTMENTID  NUMBER                  --ºÎ¼­ ¾ÆÀÌµð
-, POSITIONID    NUMBER                  --Á÷À§ ¾ÆÀÌµð
-, REGIONID      NUMBER                  --Áö¿ª ¾ÆÀÌµð
-, BASICPAY      NUMBER                  --±âº»±Þ
-, EXTRAPAY      NUMBER                  --¼ö´ç
+( EMPLOYEEID    NUMBER                  --?‚¬?›ë²ˆí˜¸(PK)
+, NAME          VARCHAR2(30)            --?‚¬?› ëª?
+, SSN           VARCHAR2(20)            --ì£¼ë?? ë²ˆí˜¸(?•”?˜¸?™” ê¸°ëŠ¥ ? ?š©!)
+, BIRTHDAY      DATE                    --?ƒ?…„?›”?¼
+, LUNAR         NUMBER(1) DEFAULT 0     --?–‘?Œ? ¥(?–‘? ¥ 0, ?Œ? ¥ 1)
+, TELEPHONE     VARCHAR2(40)            --? „?™” ë²ˆí˜¸
+, DEPARTMENTID  NUMBER                  --ë¶??„œ ?•„?´?””
+, POSITIONID    NUMBER                  --ì§ìœ„ ?•„?´?””
+, REGIONID      NUMBER                  --ì§??—­ ?•„?´?””
+, BASICPAY      NUMBER                  --ê¸°ë³¸ê¸?
+, EXTRAPAY      NUMBER                  --?ˆ˜?‹¹
 , CONSTRAINT EMPLOYEE_ID_PK PRIMARY KEY(EMPLOYEEID)
 , CONSTRAINT EMPLOYEE_DEPARTEMENTID_FK FOREIGN KEY(DEPARTMENTID)
              REFERENCES DEPARTMENT(DEPARTMENTID)
@@ -152,50 +152,50 @@ CREATE TABLE EMPLOYEE
              REFERENCES REGION(REGIONID)
 , CONSTRAINT EMPLOYEE_LUNAR_CK CHECK(LUNAR=0 OR LUNAR=1)
 );
---==>> Table EMPLOYEEÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> Table EMPLOYEE?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û ½ÃÄö½º »ý¼º(Á÷¿ø: EMPLOYEESEQ)
+--?—‹ ?‹œ???Š¤ ?ƒ?„±(ì§ì›: EMPLOYEESEQ)
 CREATE SEQUENCE EMPLOYEESEQ
 NOCACHE;
---==>> Sequence EMPLOYEESEQÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> Sequence EMPLOYEESEQ?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û µ¥ÀÌÅÍ ÀÔ·Â(Á÷¿ø µ¥ÀÌÅÍ ÀÔ·Â)
+--?—‹ ?°?´?„° ?ž…? ¥(ì§ì› ?°?´?„° ?ž…? ¥)
 INSERT INTO EMPLOYEE(EMPLOYEEID, NAME, SSN, BIRTHDAY, LUNAR
                    , TELEPHONE, DEPARTMENTID, POSITIONID, REGIONID
                    , BASICPAY, EXTRAPAY)
-VALUES(EMPLOYEESEQ.NEXTVAL, 'ÇÑÇý¸²', CRYPTPACK.ENCRYPT('9710062234567','9710062234567')
+VALUES(EMPLOYEESEQ.NEXTVAL, '?•œ?˜œë¦?', CRYPTPACK.ENCRYPT('9710062234567','9710062234567')
      , TO_DATE('1997-10-06','YYYY-MM-DD'), 0, '010-8755-9495', 1, 1, 1, 1500000, 1500000);
---==>> 1 Çà ÀÌ(°¡) »ðÀÔµÇ¾ú½À´Ï´Ù.
+--==>> 1 ?–‰ ?´(ê°?) ?‚½?ž…?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Ø ¼¼¼Ç ¼³Á¤ º¯°æ
+--?? ?„¸?…˜ ?„¤? • ë³?ê²?
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
---==>> SessionÀÌ(°¡) º¯°æµÇ¾ú½À´Ï´Ù.
+--==>> Session?´(ê°?) ë³?ê²½ë˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û È®ÀÎ
+--?—‹ ?™•?¸
 SELECT EMPLOYEEID, NAME, SSN, BIRTHDAY, LUNAR, TELEPHONE, DEPARTMENTID, POSITIONID, REGIONID, BASICPAY, EXTRAPAY FROM EMPLOYEE
 ;
 /*
 EMPLOYEEID	NAME    	SSN	        BIRTHDAY	    LUNAR	TELEPHONE	    DEPARTMENTID	    POSITIONID	REGIONID	    BASICPAY	    EXTRAPAY
-1	        ÇÑÇý¸²	"?h????"	1997-10-06	0	    010-8755-9495	1	            1	        1	        1500000	    1500000
+1	        ?•œ?˜œë¦?	"?h????"	1997-10-06	0	    010-8755-9495	1	            1	        1	        1500000	    1500000
 */
 
 
---¡Û Ä¿¹Ô
+--?—‹ ì»¤ë°‹
 COMMIT;
---==>> Ä¿¹Ô ¿Ï·á.
+--==>> ì»¤ë°‹ ?™„ë£?.
 
 
---¡Û Á÷¿ø Á¤º¸ Á¶È¸ Äõ¸®¹® ±¸¼º
+--?—‹ ì§ì› ? •ë³? ì¡°íšŒ ì¿¼ë¦¬ë¬? êµ¬ì„±
 SELECT E.EMPLOYEEID
      , E.NAME
      , E.SSN
      , TO_CHAR(E.BIRTHDAY, 'YYYY-MM-DD') AS BIRTHDAY
      , E.LUNAR
-     , DECODE(E.LUNAR, 0, '¾ç·Â', 1, 'À½·Â') AS LUNARNAME
+     , DECODE(E.LUNAR, 0, '?–‘? ¥', 1, '?Œ? ¥') AS LUNARNAME
      , E.TELEPHONE
      , E.DEPARTMENTID
      , ( SELECT DEPARTMENTNAME
@@ -216,7 +216,7 @@ FROM EMPLOYEE E
 ORDER BY E.EMPLOYEEID;
 
 
---¡Û ºä »ý¼º(EMPLOYEEVIEW)
+--?—‹ ë·? ?ƒ?„±(EMPLOYEEVIEW)
 CREATE OR REPLACE VIEW EMPLOYEEVIEW
 AS
 SELECT E.EMPLOYEEID
@@ -224,7 +224,7 @@ SELECT E.EMPLOYEEID
      , E.SSN
      , TO_CHAR(E.BIRTHDAY, 'YYYY-MM-DD') AS BIRTHDAY
      , E.LUNAR
-     , DECODE(E.LUNAR, 0, '¾ç·Â', 1, 'À½·Â') AS LUNARNAME
+     , DECODE(E.LUNAR, 0, '?–‘? ¥', 1, '?Œ? ¥') AS LUNARNAME
      , E.TELEPHONE
      , E.DEPARTMENTID
      , ( SELECT DEPARTMENTNAME
@@ -243,10 +243,10 @@ SELECT E.EMPLOYEEID
      , NVL(E.BASICPAY, 0) + NVL(E.EXTRAPAY, 0) AS PAY
 FROM EMPLOYEE E
 ORDER BY E.EMPLOYEEID;
---==>> View EMPLOYEEVIEWÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> View EMPLOYEEVIEW?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û Áö¿ª µ¥ÀÌÅÍ Á¶È¸ Äõ¸®¹® ±¸¼º(Áö¿ª µ¥ÀÌÅÍ »èÁ¦ °¡´É¿©ºÎ È®ÀÎ)
+--?—‹ ì§??—­ ?°?´?„° ì¡°íšŒ ì¿¼ë¦¬ë¬? êµ¬ì„±(ì§??—­ ?°?´?„° ?‚­? œ ê°??Š¥?—¬ë¶? ?™•?¸)
 SELECT R.REGIONID, R.REGIONNAME
      , ( SELECT COUNT(*)
          FROM EMPLOYEE
@@ -254,17 +254,17 @@ SELECT R.REGIONID, R.REGIONNAME
 FROM REGION R;
 /*
 REGIONID	REGIONNAME	DELCHECK
-1	    ¼­¿ï      	1
-2	    °æ±â	    0
-3	    ÀÎÃµ  	    0
-4	    Á¦ÁÖ	    0
+1	    ?„œ?š¸      	1
+2	    ê²½ê¸°	    0
+3	    ?¸ì²?  	    0
+4	    ? œì£?	    0
 */
---==>> ¡º¼­¿ï¡»ÀÇ Áö¿ª µ¥ÀÌÅÍ´Â »èÁ¦°¡ ºÒ°¡´ÉÇÑ »óÈ²ÀÌ¸ç,
---     ¡º°æ±â¡», ¡ºÀÎÃµ¡», ¡ºÁ¦ÁÖ¡»ÀÇ Áö¿ª µ¥ÀÌÅÍ´Â »èÁ¦°¡ °¡´ÉÇÑ »óÈ²ÀÓÀ»
---     ÆÇº°ÇÒ ¼ö ÀÖ´Â Äõ¸®¹®
+--==>> ?Žì„œ?š¸?ì˜ ì§??—­ ?°?´?„°?Š” ?‚­? œê°? ë¶ˆê??Š¥?•œ ?ƒ?™©?´ë©?,
+--     ?Žê²½ê¸°ã??, ?Žì¸ì²œã??, ?Žì œì£¼ã?ì˜ ì§??—­ ?°?´?„°?Š” ?‚­? œê°? ê°??Š¥?•œ ?ƒ?™©?ž„?„
+--     ?Œë³„í•  ?ˆ˜ ?žˆ?Š” ì¿¼ë¦¬ë¬?
 
 
---¡Û ºä »ý¼º(REGIONVEIW)
+--?—‹ ë·? ?ƒ?„±(REGIONVEIW)
 CREATE OR REPLACE VIEW REGIONVEIW
 AS
 SELECT R.REGIONID, R.REGIONNAME
@@ -272,10 +272,10 @@ SELECT R.REGIONID, R.REGIONNAME
          FROM EMPLOYEE
          WHERE REGIONID = R.REGIONID ) AS DELCHECK
 FROM REGION R;
---==>> View REGIONVEIWÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> View REGIONVEIW?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û Á÷À§ µ¥ÀÌÅÍ Á¶È¸ Äõ¸®¹® ±¸¼º(Á÷À§ µ¥ÀÌÅÍ »èÁ¦ °¡´É¿©ºÎ È®ÀÎ)
+--?—‹ ì§ìœ„ ?°?´?„° ì¡°íšŒ ì¿¼ë¦¬ë¬? êµ¬ì„±(ì§ìœ„ ?°?´?„° ?‚­? œ ê°??Š¥?—¬ë¶? ?™•?¸)
 SELECT P.POSITIONID, P.POSITIONNAME, P.MINBASICPAY
      , ( SELECT COUNT(*)
          FROM EMPLOYEE
@@ -283,14 +283,14 @@ SELECT P.POSITIONID, P.POSITIONNAME, P.MINBASICPAY
 FROM POSITION P;
 /*
 POSITIONID	POSITIONNAME	MINBASICPAY	DELCHECK
-1	        »ç¿ø	        1000000	    1
-2	        ´ë¸®	    2000000	    0
-3	        ºÎÀå      	3000000	    0
-4	        »ó¹«	        4000000	    0
+1	        ?‚¬?›	        1000000	    1
+2	        ??ë¦?	    2000000	    0
+3	        ë¶??ž¥      	3000000	    0
+4	        ?ƒë¬?	        4000000	    0
 */
 
 
---¡Û ºä »ý¼º(POSITIONVIEW)
+--?—‹ ë·? ?ƒ?„±(POSITIONVIEW)
 CREATE OR REPLACE VIEW POSITIONVIEW
 AS
 SELECT P.POSITIONID, P.POSITIONNAME, P.MINBASICPAY
@@ -298,10 +298,10 @@ SELECT P.POSITIONID, P.POSITIONNAME, P.MINBASICPAY
          FROM EMPLOYEE
          WHERE POSITIONID = P.POSITIONID ) AS DELCHECK
 FROM POSITION P;
---==>> View POSITIONVIEWÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> View POSITIONVIEW?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û ºÎ¼­ µ¥ÀÌÅÍ Á¶È¸ Äõ¸®¹® ±¸¼º(ºÎ¼­ µ¥ÀÌÅÍ »èÁ¦ °¡´É¿©ºÎ È®ÀÎ)
+--?—‹ ë¶??„œ ?°?´?„° ì¡°íšŒ ì¿¼ë¦¬ë¬? êµ¬ì„±(ë¶??„œ ?°?´?„° ?‚­? œ ê°??Š¥?—¬ë¶? ?™•?¸)
 SELECT D.DEPARTMENTID, D.DEPARTMENTNAME
     , ( SELECT COUNT(*)
         FROM EMPLOYEE
@@ -309,13 +309,13 @@ SELECT D.DEPARTMENTID, D.DEPARTMENTNAME
 FROM DEPARTMENT D;
 /*
 DEPARTMENTID    	DEPARTMENTNAME	DELCHECK
-1	            °³¹ßºÎ	        1
-2	            ¸¶ÄÉÆÃºÎ	        0
-3	            ¿µ¾÷ºÎ	        0
+1	            ê°œë°œë¶?	        1
+2	            ë§ˆì??Œ…ë¶?	        0
+3	            ?˜?—…ë¶?	        0
 */
 
 
---¡Û ºä »ý¼º(DEPARTMENTVIEW)
+--?—‹ ë·? ?ƒ?„±(DEPARTMENTVIEW)
 CREATE OR REPLACE VIEW DEPARTMENTVIEW
 AS
 SELECT D.DEPARTMENTID, D.DEPARTMENTNAME
@@ -323,15 +323,15 @@ SELECT D.DEPARTMENTID, D.DEPARTMENTNAME
         FROM EMPLOYEE
         WHERE DEPARTMENTID = D.DEPARTMENTID ) AS DELCHECK
 FROM DEPARTMENT D;
---==>> View DEPARTMENTVIEWÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> View DEPARTMENTVIEW?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û Á÷À§º° ÃÖ¼Ò ±âº»±Þ °Ë»ö Äõ¸®¹® ±¸¼º
+--?—‹ ì§ìœ„ë³? ìµœì†Œ ê¸°ë³¸ê¸? ê²??ƒ‰ ì¿¼ë¦¬ë¬? êµ¬ì„±
 SELECT MINBASICPAY
 FROM POSITION
-WHERE POSITIONID=1;     --»ç¿ø
+WHERE POSITIONID=1;     --?‚¬?›
 
---ÇÑ ÁÙ ±¸¼º
+--?•œ ì¤? êµ¬ì„±
 SELECT MINBASICPAY FROM POSITION WHERE POSITIONID=1
 ;
 --==>> 1000000
@@ -340,30 +340,30 @@ SELECT MINBASICPAY FROM POSITION WHERE POSITIONID=1
 --------------------------------------------------------------------------------
 
 
---¡á¡á¡á ·Î±×ÀÎ / ·Î±×¾Æ¿ô °úÁ¤ Ãß°¡(º¯°æ) ¡á¡á¡á--
+--?– ?– ?–  ë¡œê·¸?¸ / ë¡œê·¸?•„?›ƒ ê³¼ì • ì¶”ê?(ë³?ê²?) ?– ?– ?– --
 
---ID¿Í PW ÄÃ·³ µ¥ÀÌÅÍ¸¦ ´ã°í ÀÖ´Â Å×ÀÌºíÀÌ º°µµ·Î Á¸ÀçÇÏÁö ¾Ê´Â »óÈ²ÀÌ´Ù.
---ÀÌ¿Í °ü·ÃÇÏ¿© EMPLOYEEID(»ç¿ø ¾ÆÀÌµð)¿Í SSN(ÁÖ¹Î¹øÈ£) µÞÀÚ¸®
---7ÀÚ¸® ¼ýÀÚ¸¦ ÀÌ¿ëÇÒ ¼ö ÀÖµµ·Ï ±¸¼ºÇÑ´Ù.
+--ID?? PW ì»¬ëŸ¼ ?°?´?„°ë¥? ?‹´ê³? ?žˆ?Š” ?…Œ?´ë¸”ì´ ë³„ë„ë¡? ì¡´ìž¬?•˜ì§? ?•Š?Š” ?ƒ?™©?´?‹¤.
+--?´?? ê´?? ¨?•˜?—¬ EMPLOYEEID(?‚¬?› ?•„?´?””)?? SSN(ì£¼ë?¼ë²ˆ?˜¸) ?’·?žë¦?
+--7?žë¦? ?ˆ«?žë¥? ?´?š©?•  ?ˆ˜ ?žˆ?„ë¡? êµ¬ì„±?•œ?‹¤.
 
---¡Ø ±âÁ¸ Å×ÀÌºí ±¸Á¶ º¯°æ
---¨ç
---EMPLOYEE(Á÷¿ø Å×ÀÌºí)ÀÇ SSN(ÁÖ¹Î¹øÈ£) ÄÃ·³À» ºÐ¸®ÇÑ´Ù.
+--?? ê¸°ì¡´ ?…Œ?´ë¸? êµ¬ì¡° ë³?ê²?
+--?‘ 
+--EMPLOYEE(ì§ì› ?…Œ?´ë¸?)?˜ SSN(ì£¼ë?¼ë²ˆ?˜¸) ì»¬ëŸ¼?„ ë¶„ë¦¬?•œ?‹¤.
 --SSN -> SSN1, SSN2
---SSN1: ÁÖ¹Î¹øÈ£ ¾Õ 6ÀÚ¸®
---SSN2: ÁÖ¹Î¹øÈ£ µÞ 7ÀÚ¸® ¡æ ¾ÏÈ£È­ Àû¿ë
+--SSN1: ì£¼ë?¼ë²ˆ?˜¸ ?•ž 6?žë¦?
+--SSN2: ì£¼ë?¼ë²ˆ?˜¸ ?’· 7?žë¦? ?†’ ?•”?˜¸?™” ? ?š©
 
---¨è
---EMPLOYEE(Á÷¿ø Å×ÀÌºí)¿¡ GRADE(µî±Þ) ÄÃ·³À» Ãß°¡ÇÑ´Ù.
---GRADE ¡æ °ü¸®ÀÚ 0, ÀÏ¹Ý»ç¿ø 1
+--?‘¡
+--EMPLOYEE(ì§ì› ?…Œ?´ë¸?)?— GRADE(?“±ê¸?) ì»¬ëŸ¼?„ ì¶”ê??•œ?‹¤.
+--GRADE ?†’ ê´?ë¦¬ìž 0, ?¼ë°˜ì‚¬?› 1
 
 
---¡Û ÄÃ·³ ºÐÇÒ SSN ¡æ SSN1, SSN2
+--?—‹ ì»¬ëŸ¼ ë¶„í•  SSN ?†’ SSN1, SSN2
 
---ÄÃ·³ Ãß°¡
+--ì»¬ëŸ¼ ì¶”ê?
 ALTER TABLE EMPLOYEE
 ADD(SSN1 CHAR(6), SSN2 VARCHAR2(50));
---==>> Table EMPLOYEEÀÌ(°¡) º¯°æµÇ¾ú½À´Ï´Ù.
+--==>> Table EMPLOYEE?´(ê°?) ë³?ê²½ë˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
 SELECT *
@@ -374,52 +374,52 @@ UPDATE EMPLOYEE
 SET SSN1=SUBSTR(CRYPTPACK.DECRYPT(SSN,'9710062234567'),1,6)
   , SSN2=CRYPTPACK.ENCRYPT(SUBSTR(CRYPTPACK.DECRYPT(SSN,'9710062234567'),7,7)
                         , SUBSTR(CRYPTPACK.DECRYPT(SSN,'9710062234567'),7,7));
---==>> 1 Çà ÀÌ(°¡) ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+--==>> 1 ?–‰ ?´(ê°?) ?—…?°?´?Š¸?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---±âÁ¸ ÁÖ¹Î¹øÈ£ ÄÃ·³(SSN) Á¦°Å
+--ê¸°ì¡´ ì£¼ë?¼ë²ˆ?˜¸ ì»¬ëŸ¼(SSN) ? œê±?
 ALTER TABLE EMPLOYEE
 DROP COLUMN SSN;
---==>> Table EMPLOYEEÀÌ(°¡) º¯°æµÇ¾ú½À´Ï´Ù.
+--==>> Table EMPLOYEE?´(ê°?) ë³?ê²½ë˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û È®ÀÎ
+--?—‹ ?™•?¸
 SELECT *
 FROM EMPLOYEE;
---==>> 1	ÇÑÇý¸²	1997-10-06	0	010-8755-9495	1	1	1	1500000	1500000	971006	Y{?7?
+--==>> 1	?•œ?˜œë¦?	1997-10-06	0	010-8755-9495	1	1	1	1500000	1500000	971006	Y{?7?
 
 
---¡Û ÄÃ·³ Ãß°¡ ¡æ GRADE - ±âº»°ªÀ» 1(ÀÏ¹Ý Á÷¿ø)·Î ±¸¼º
+--?—‹ ì»¬ëŸ¼ ì¶”ê? ?†’ GRADE - ê¸°ë³¸ê°’ì„ 1(?¼ë°? ì§ì›)ë¡? êµ¬ì„±
 ALTER TABLE EMPLOYEE
 ADD GRADE NUMBER(1) DEFAULT 1;
---==>> Table EMPLOYEEÀÌ(°¡) º¯°æµÇ¾ú½À´Ï´Ù.
+--==>> Table EMPLOYEE?´(ê°?) ë³?ê²½ë˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û È®ÀÎ
+--?—‹ ?™•?¸
 SELECT *
 FROM EMPLOYEE;
---==>> 1	ÇÑÇý¸²	1997-10-06	0	010-8755-9495	1	1	1	1500000	1500000	971006	Y{?7?	1
+--==>> 1	?•œ?˜œë¦?	1997-10-06	0	010-8755-9495	1	1	1	1500000	1500000	971006	Y{?7?	1
 
 
---¡Û ÇÑÇý¸² »ç¿øÀ» °ü¸®ÀÚ·Î ÀÓ¸í
+--?—‹ ?•œ?˜œë¦? ?‚¬?›?„ ê´?ë¦¬ìžë¡? ?ž„ëª?
 UPDATE EMPLOYEE
 SET GRADE=0
 WHERE EMPLOYEEID=1;
---==>> 1 Çà ÀÌ(°¡) ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+--==>> 1 ?–‰ ?´(ê°?) ?—…?°?´?Š¸?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û È®ÀÎ
+--?—‹ ?™•?¸
 SELECT *
 FROM EMPLOYEE;
---==>> 1	ÇÑÇý¸²	1997-10-06	0	010-8755-9495	1	1	1	1500000	1500000	971006	Y{?7?	0
+--==>> 1	?•œ?˜œë¦?	1997-10-06	0	010-8755-9495	1	1	1	1500000	1500000	971006	Y{?7?	0
 
 
---¡Û Ä¿¹Ô
+--?—‹ ì»¤ë°‹
 COMMIT;
 
 
---¡Ø Å×ÀÌºíÀÇ ±¸Á¶¸¦ º¯°æÇß±â ¶§¹®¿¡
---   ÀÌ¿Í °ü·ÃÇÑ ºä(VIEW)ÀÇ ³»¿ëÀ» »õ·Î ÀÛ¼º(¼öÁ¤)
+--?? ?…Œ?´ë¸”ì˜ êµ¬ì¡°ë¥? ë³?ê²½í–ˆê¸? ?•Œë¬¸ì—
+--   ?´?? ê´?? ¨?•œ ë·?(VIEW)?˜ ?‚´?š©?„ ?ƒˆë¡? ?ž‘?„±(?ˆ˜? •)
 CREATE OR REPLACE VIEW EMPLOYEEVIEW
 AS
 SELECT E.EMPLOYEEID AS EMPLOYEEID
@@ -427,7 +427,7 @@ SELECT E.EMPLOYEEID AS EMPLOYEEID
      , E.SSN1 AS SSN
      , TO_CHAR(E.BIRTHDAY, 'YYYY-MM-DD') AS BIRTHDAY
      , E.LUNAR AS LUNAR
-     , DECODE(E.LUNAR, 0, '¾ç·Â', 1, 'À½·Â') AS LUNARNAME
+     , DECODE(E.LUNAR, 0, '?–‘? ¥', 1, '?Œ? ¥') AS LUNARNAME
      , E.TELEPHONE AS TELEPHONE
      , E.DEPARTMENTID AS DEPARTMENTID
      , ( SELECT DEPARTMENTNAME
@@ -447,12 +447,12 @@ SELECT E.EMPLOYEEID AS EMPLOYEEID
      , E.GRADE AS GRADE
 FROM EMPLOYEE E
 ORDER BY E.EMPLOYEEID;
---==>> View EMPLOYEEVIEWÀÌ(°¡) »ý¼ºµÇ¾ú½À´Ï´Ù.
+--==>> View EMPLOYEEVIEW?´(ê°?) ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
 DESC EMPLOYEEVIEW;
 /*
-ÀÌ¸§             ³Î?       À¯Çü           
+?´ë¦?             ?„?       ?œ ?˜•           
 -------------- -------- ------------ 
 EMPLOYEEID     NOT NULL NUMBER       
 NAME                    VARCHAR2(30) 
@@ -474,69 +474,69 @@ GRADE                   NUMBER(1)
 */
 
 
---¡Û Á÷¿ø µ¥ÀÌÅÍ ÀÔ·Â Äõ¸®¹® ±¸¼º(¼öÁ¤µÈ ³»¿ë)
+--?—‹ ì§ì› ?°?´?„° ?ž…? ¥ ì¿¼ë¦¬ë¬? êµ¬ì„±(?ˆ˜? •?œ ?‚´?š©)
 INSERT INTO EMPLOYEE(EMPLOYEEID, NAME, SSN1, SSN2, BIRTHDAY, LUNAR
                    , TELEPHONE, DEPARTMENTID, POSITIONID, REGIONID
                    , BASICPAY, EXTRAPAY)
-VALUES(EMPLOYEESEQ.NEXTVAL,'¹ÚÁ¤ÁØ','961031',CRYPTPACK.ENCRYPT('1234567','1234567')
+VALUES(EMPLOYEESEQ.NEXTVAL,'ë°•ì •ì¤?','961031',CRYPTPACK.ENCRYPT('1234567','1234567')
      , TO_DATE('1996-10-31','YYYY-MM-DD'),0,'010-4020-7429',1,1,1
-     , 1500000,150000); --¹é¿À½Ê¸¸, ½Ê¿À¸¸
---==>> 1 Çà ÀÌ(°¡) »ðÀÔµÇ¾ú½À´Ï´Ù.
+     , 1500000,150000); --ë°±ì˜¤?‹­ë§?, ?‹­?˜¤ë§?
+--==>> 1 ?–‰ ?´(ê°?) ?‚½?ž…?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
 
---¡Û È®ÀÎ
+--?—‹ ?™•?¸
 SELECT *
 FROM EMPLOYEEVIEW;
 --==>>
 /*
 EMPLOYEEID	NAME	SSN	BIRTHDAY	LUNAR	LUNARNAME	TELEPHONE	DEPARTMENTID	DEPARTMENTNAME	POSITIONID	POSITIONNAME	REGIONID	REGIONNAME	BASICPAY	EXTRAPAY	PAY	GRADE
-1	ÇÑÇý¸²	971006	1997-10-06	0	¾ç·Â	010-8755-9495	1	°³¹ßºÎ	1	»ç¿ø	1	¼­¿ï	1500000	150000	1650000	0
-2	¹ÚÁ¤ÁØ	961031	1996-10-31	0	¾ç·Â	010-4020-7429	1	°³¹ßºÎ	1	»ç¿ø	1	¼­¿ï	1500000	150000	1650000	1
+1	?•œ?˜œë¦?	971006	1997-10-06	0	?–‘? ¥	010-8755-9495	1	ê°œë°œë¶?	1	?‚¬?›	1	?„œ?š¸	1500000	150000	1650000	0
+2	ë°•ì •ì¤?	961031	1996-10-31	0	?–‘? ¥	010-4020-7429	1	ê°œë°œë¶?	1	?‚¬?›	1	?„œ?š¸	1500000	150000	1650000	1
 */
 
 
---¡Û Ä¿¹Ô
+--?—‹ ì»¤ë°‹
 COMMIT;
 
 
---¡Û ·Î±×ÀÎ Äõ¸®¹® ±¸¼º
---¨ç ÀÏ¹Ý »ç¿ø ·Î±×ÀÎ(ID ¡æ EMPLOYEEID, PW ¡æ SSN2)
+--?—‹ ë¡œê·¸?¸ ì¿¼ë¦¬ë¬? êµ¬ì„±
+--?‘  ?¼ë°? ?‚¬?› ë¡œê·¸?¸(ID ?†’ EMPLOYEEID, PW ?†’ SSN2)
 SELECT NAME
 FROM EMPLOYEE
 WHERE EMPLOYEEID=2
   AND (SELECT SSN2
        FROM EMPLOYEE
        WHERE EMPLOYEEID=2) = CRYPTPACK.ENCRYPT('1234567','1234567');
---==>> ¹ÚÁ¤ÁØ ¡æ ·Î±×ÀÎ ¼º°ø
+--==>> ë°•ì •ì¤? ?†’ ë¡œê·¸?¸ ?„±ê³?
 
 SELECT NAME
 FROM EMPLOYEE
 WHERE EMPLOYEEID=2
   AND SSN2 = CRYPTPACK.ENCRYPT('1234567','1234567');
---==>> ¹ÚÁ¤ÁØ ¡æ ·Î±×ÀÎ ¼º°ø
+--==>> ë°•ì •ì¤? ?†’ ë¡œê·¸?¸ ?„±ê³?
 
---ÇÑ ÁÙ ±¸¼º
+--?•œ ì¤? êµ¬ì„±
 SELECT NAME FROM EMPLOYEE WHERE EMPLOYEEID=2 AND SSN2 = CRYPTPACK.ENCRYPT('1234567','1234567')
 ;
---==>> ¹ÚÁ¤ÁØ ¡æ ·Î±×ÀÎ ¼º°ø
+--==>> ë°•ì •ì¤? ?†’ ë¡œê·¸?¸ ?„±ê³?
 
 
---¨è °ü¸®ÀÚ ·Î±×ÀÎ (ID ¡æ EMPLOYEEID, PW ¡æ SSN2, GRADE = 0)
+--?‘¡ ê´?ë¦¬ìž ë¡œê·¸?¸ (ID ?†’ EMPLOYEEID, PW ?†’ SSN2, GRADE = 0)
 SELECT NAME
 FROM EMPLOYEE
 WHERE EMPLOYEEID=2
   AND SSN2 = CRYPTPACK.ENCRYPT('1234567','1234567')
   AND GRADE = 0;
---==>> (Á¶È¸ °á°ú ¾øÀ½) ¡æ °ü¸®ÀÚ ·Î±×ÀÎ ½ÇÆÐ
+--==>> (ì¡°íšŒ ê²°ê³¼ ?—†?Œ) ?†’ ê´?ë¦¬ìž ë¡œê·¸?¸ ?‹¤?Œ¨
 
 SELECT NAME
 FROM EMPLOYEE
 WHERE EMPLOYEEID=1
   AND SSN2 = CRYPTPACK.ENCRYPT('2234567','2234567')
   AND GRADE=0;
---==>> ÇÑÇý¸² ¡æ °ü¸®ÀÚ ·Î±×ÀÎ ¼º°ø
+--==>> ?•œ?˜œë¦? ?†’ ê´?ë¦¬ìž ë¡œê·¸?¸ ?„±ê³?
 
---ÇÑ ÁÙ ±¸¼º
+--?•œ ì¤? êµ¬ì„±
 SELECT NAME FROM EMPLOYEE WHERE EMPLOYEEID=1 AND SSN2 = CRYPTPACK.ENCRYPT('2234567','2234567') AND GRADE=0
 ;
 
@@ -544,22 +544,22 @@ SELECT NAME
 FROM EMPLOYEE
 WHERE EMPLOYEEID=1
   AND SSN2 = CRYPTPACK.ENCRYPT('2234567','2234567');
---==>> ÇÑÇý¸² ¡æ ÀÏ¹Ý »ç¿ø ·Î±×ÀÎ ¼º°ø
+--==>> ?•œ?˜œë¦? ?†’ ?¼ë°? ?‚¬?› ë¡œê·¸?¸ ?„±ê³?
 
 
---¡Û Á÷¿ø µ¥ÀÌÅÍ »èÁ¦ Äõ¸®¹® ±¸¼º
+--?—‹ ì§ì› ?°?´?„° ?‚­? œ ì¿¼ë¦¬ë¬? êµ¬ì„±
 DELETE
 FROM EMPLOYEE
 WHERE EMPLOYEEID=2;
 
---ÇÑ ÁÙ ±¸¼º
+--?•œ ì¤? êµ¬ì„±
 DELETE FROM EMPLOYEE WHERE EMPLOYEEID=2
 ;
 
 
 DESC EMPLOYEE;
 /*
-ÀÌ¸§           ³Î?       À¯Çü           
+?´ë¦?           ?„?       ?œ ?˜•           
 ------------ -------- ------------ 
 EMPLOYEEID   NOT NULL NUMBER       
 NAME                  VARCHAR2(30) 
@@ -576,54 +576,69 @@ SSN2                  VARCHAR2(50)
 GRADE                 NUMBER(1)
 */
 
---¡Û Á÷¿ø µ¥ÀÌÅÍ ¼öÁ¤ Äõ¸®¹® ±¸¼º
+--?—‹ ì§ì› ?°?´?„° ?ˆ˜? • ì¿¼ë¦¬ë¬? êµ¬ì„±
 UPDATE EMPLOYEE
-SET NAME='µÎÇý¸²'
+SET NAME='?‘?˜œë¦?'
   , BIRTHDAY=TO_DATE('2001-01-01','YYYY-MM-DD')
   , LUNAR=1
   , TELEPHONE='010-1111-1111'
   , DEPARTMENTID=2
   , POSITIONID=2
   , REGIONID=2
-  , BASICPAY=2200000    --ÀÌ¹éÀÌ½Ê¸¸
-  , EXTRAPAY=220000     --ÀÌ½ÊÀÌ¸¸
+  , BASICPAY=2200000    --?´ë°±ì´?‹­ë§?
+  , EXTRAPAY=220000     --?´?‹­?´ë§?
   , SSN1='010101'
   , SSN2=CRYPTPACK.ENCRYPT('4234567','4234567')
   , GRADE=1
 WHERE EMPLOYEEID=1;
---==>> 1 Çà ÀÌ(°¡) ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+--==>> 1 ?–‰ ?´(ê°?) ?—…?°?´?Š¸?˜?—ˆ?Šµ?‹ˆ?‹¤.
 
---ÇÑ ÁÙ ±¸¼º
-UPDATE EMPLOYEE SET NAME='µÎÇý¸²', BIRTHDAY=TO_DATE('2001-01-01','YYYY-MM-DD'), LUNAR=1, TELEPHONE='010-1111-1111', DEPARTMENTID=2, POSITIONID=2, REGIONID=2, BASICPAY=2200000, EXTRAPAY=220000, SSN1='010101', SSN2=CRYPTPACK.ENCRYPT('4234567','4234567'), GRADE=1 WHERE EMPLOYEEID=1
+--?•œ ì¤? êµ¬ì„±
+UPDATE EMPLOYEE SET NAME='?‘?˜œë¦?', BIRTHDAY=TO_DATE('2001-01-01','YYYY-MM-DD'), LUNAR=1, TELEPHONE='010-1111-1111', DEPARTMENTID=2, POSITIONID=2, REGIONID=2, BASICPAY=2200000, EXTRAPAY=220000, SSN1='010101', SSN2=CRYPTPACK.ENCRYPT('4234567','4234567'), GRADE=1 WHERE EMPLOYEEID=1
 ;
 
 
---¡Û ·Ñ¹é
+--?—‹ ë¡¤ë°±
 ROLLBACK;
---==>> ·Ñ¹é ¿Ï·á.
+--==>> ë¡¤ë°± ?™„ë£?.
 
 
 ----------------------------------------------------------------------------------------------------
 
 
---¡Û ºä(EMPLOYEEVIEW) Á¶È¸¸¦ ÅëÇÑ ¸®½ºÆ® Ãâ·Â Äõ¸®¹® ±¸¼º
+--?—‹ ë·?(EMPLOYEEVIEW) ì¡°íšŒë¥? ?†µ?•œ ë¦¬ìŠ¤?Š¸ ì¶œë ¥ ì¿¼ë¦¬ë¬? êµ¬ì„±
 SELECT EMPLOYEEID, NAME, SSN, BIRTHDAY, LUNAR, LUNARNAME, TELEPHONE, DEPARTMENTID, DEPARTMENTNAME, POSITIONID, POSITIONNAME, REGIONID, REGIONNAME, BASICPAY, EXTRAPAY, PAY, GRADE FROM EMPLOYEEVIEW ORDER BY EMPLOYEEID
 ;
 
 
---¡Û ºä(REGIONVIEW) Á¶È¸¸¦ ÅëÇÑ ¸®½ºÆ® Ãâ·Â Äõ¸®¹® ±¸¼º
+--?—‹ ë·?(REGIONVIEW) ì¡°íšŒë¥? ?†µ?•œ ë¦¬ìŠ¤?Š¸ ì¶œë ¥ ì¿¼ë¦¬ë¬? êµ¬ì„±
 SELECT REGIONID, REGIONNAME, DELCHECK FROM REGIONVEIW ORDER BY REGIONID
 ;
 
 
---¡Û ºä(DEPARTMENTVIEW) Á¶È¸¸¦ ÅëÇÑ ¸®½ºÆ® Ãâ·Â Äõ¸®¹® ±¸¼º
+--?—‹ ë·?(DEPARTMENTVIEW) ì¡°íšŒë¥? ?†µ?•œ ë¦¬ìŠ¤?Š¸ ì¶œë ¥ ì¿¼ë¦¬ë¬? êµ¬ì„±
 SELECT DEPARTMENTID, DEPARTMENTNAME, DELCHECK FROM DEPARTMENTVIEW ORDER BY DEPARTMENTID
 ;
 
---¡Û ºä(POSITIONID) Á¶È¸¸¦ ÅëÇÑ ¸®½ºÆ® Ãâ·Â Äõ¸®¹® ±¸¼º
+--?—‹ ë·?(POSITIONID) ì¡°íšŒë¥? ?†µ?•œ ë¦¬ìŠ¤?Š¸ ì¶œë ¥ ì¿¼ë¦¬ë¬? êµ¬ì„±
 SELECT POSITIONID, POSITIONNAME, DELCHECK FROM POSITIONVIEW ORDER BY POSITIONID
 ;
 
---¡Û Á÷¿ø ¾ÆÀÌµð¸¦ È°¿ëÇÑ Á÷¿ø °Ë»ö Äõ¸®¹® ±¸¼º
+--?—‹ ì§ì› ?•„?´?””ë¥? ?™œ?š©?•œ ì§ì› ê²??ƒ‰ ì¿¼ë¦¬ë¬? êµ¬ì„±
 SELECT EMPLOYEEID, NAME, SSN1, TO_CHAR(BIRTHDAY,'YYYY-MM-DD') AS BIRTHDAY, LUNAR, TELEPHONE, DEPARTMENTID, POSITIONID, REGIONID, BASICPAY, EXTRAPAY FROM EMPLOYEE WHERE EMPLOYEEID=1
 ;
+
+
+----------------------------------------------------------------------------------------------------
+
+
+--?—‹ ê¹?ê°??˜ ?‚¬?›?˜ ?–‘/?Œ? ¥?„ ?Œ? ¥?œ¼ë¡? ë³?ê²?
+UPDATE EMPLOYEE SET LUNAR=1 WHERE EMPLOYEEID=3
+;
+--==>> 1 ?–‰ ?´(ê°?) ?—…?°?´?Š¸?˜?—ˆ?Šµ?‹ˆ?‹¤.
+
+
+--?—‹ ì»¤ë°‹
+COMMIT;
+--==>> ì»¤ë°‹ ?™„ë£?.
+

@@ -18,7 +18,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.sql.DataSource;
-
+ 
 public class RegionDAO implements IRegionDAO
 {
 	// 인터페이스 자료형 구성
@@ -60,6 +60,34 @@ public class RegionDAO implements IRegionDAO
 		
 		rs.close();
 		stmt.close();
+		conn.close();
+		
+		return result;
+	}
+	
+	// 지역 검색
+	@Override
+	public Region searchId(String regionId) throws SQLException
+	{
+		Region result = new Region();
+		
+		Connection conn = dataSource.getConnection();
+		
+		String sql = "SELECT REGIONID, REGIONNAME, DELCHECK FROM REGIONVEIW WHERE REGIONID = ?";
+		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, regionId);
+		ResultSet rs = pstmt.executeQuery();
+		
+		while (rs.next())
+		{	
+			result.setRegionId(rs.getString("REGIONID"));
+			result.setRegionName(rs.getString("REGIONNAME"));
+			result.setDelCheck(rs.getInt("DELCHECK"));
+		}
+		
+		rs.close();
+		pstmt.close();
 		conn.close();
 		
 		return result;
@@ -123,6 +151,33 @@ public class RegionDAO implements IRegionDAO
 		
 		result = pstmt.executeUpdate();
 		
+		pstmt.close();
+		conn.close();
+		
+		return result;
+	}
+	
+	// 지역 데이터 중복 검사용 개수 세기
+	@Override
+	public int count(String regionName) throws SQLException
+	{
+		int result = 0;
+		
+		Connection conn = dataSource.getConnection();
+		
+		String sql = "SELECT COUNT(*) AS COUNT FROM REGION WHERE REGIONNAME = ?";
+		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, regionName);
+		
+		ResultSet rs = pstmt.executeQuery();
+		
+		while (rs.next())
+		{
+			result = rs.getInt("COUNT");
+		}
+		
+		rs.close();
 		pstmt.close();
 		conn.close();
 		
