@@ -17,6 +17,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <!-- 부트스트랩 테마 css -->
 <script src="<%=cp %>/js/bootstrap.min.js"></script>
+<style type="text/css">
+	th, td
+	{
+		text-align: center;
+	}
+</style>
 <script type="text/javascript">
 
 	$(function()
@@ -61,7 +67,7 @@
 	<div class="panel-group">
 		<div class="panel panel-default">
 			<div class="panel-heading row">
-				<span class="col-md-3" style="font-size: 17pt; font-weight: bold;">
+				<span style="font-size: 17pt; font-weight: bold;" class="col md-3">
 				학생 리스트 출력
 				</span>
 				<span class="col-md-9">
